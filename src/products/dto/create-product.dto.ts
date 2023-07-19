@@ -9,7 +9,7 @@ export class CreateProductDto {
 
   available: boolean;
 
-  category: number;
+  category: Category;
 
   about: string;
 }

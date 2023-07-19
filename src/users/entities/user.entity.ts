@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { ProductInCart } from 'src/product_in_cart/entities/product_in_cart.entity';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
 @Entity()
 export class User {
@@ -13,4 +14,7 @@ export class User {
 
   @Column()
   password: string;
+
+  @OneToMany(() => ProductInCart, (product_in_cart) => product_in_cart.cart)
+  product_in_cart: ProductInCart[];
 }
