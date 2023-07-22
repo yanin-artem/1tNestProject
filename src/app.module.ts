@@ -12,6 +12,7 @@ import { User } from './users/entities/user.entity';
 import { ProductInCart } from './product_in_cart/entities/product_in_cart.entity';
 import { Product } from './products/entities/product.entity';
 import { Category } from './categories/entities/category.entity';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { Category } from './categories/entities/category.entity';
       entities: [User, ProductInCart, Product, Category],
       synchronize: true,
     }),
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

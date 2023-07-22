@@ -4,7 +4,5 @@ import { User } from 'src/users/entities/user.entity';
 export class CreateProductInCartDto {
   product: Product;
 
-  quantity: number;
-
   cart: User;
 }
