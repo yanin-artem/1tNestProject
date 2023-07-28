@@ -17,10 +17,6 @@ import { AuthModule } from './auth/auth.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    UsersModule,
-    ProductInCartModule,
-    ProductsModule,
-    CategoriesModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: process.env.DB_HOST,
@@ -31,6 +27,10 @@ import { AuthModule } from './auth/auth.module';
       entities: [User, ProductInCart, Product, Category],
       synchronize: true,
     }),
+    UsersModule,
+    ProductInCartModule,
+    ProductsModule,
+    CategoriesModule,
     AuthModule,
   ],
   controllers: [AppController],
